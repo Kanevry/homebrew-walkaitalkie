@@ -20,9 +20,7 @@ cask "walkaitalkie" do
   # tracks the marketing version only, because that is what the DMG filename uses.
   livecheck do
     url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/appcast.xml"
-    strategy :sparkle do |item|
-      item.short_version
-    end
+    strategy :sparkle, &:short_version
   end
 
   # LSMinimumSystemVersion in the shipped bundle is 26.0 (MACOSX_DEPLOYMENT_TARGET).
