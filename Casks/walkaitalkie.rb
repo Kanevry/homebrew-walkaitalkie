@@ -15,9 +15,14 @@ cask "walkaitalkie" do
   homepage "https://walkaitalkie.com/"
 
   # Same Sparkle appcast the shipped app updates from (SUFeedURL in Info.plist).
+  # The appcast carries both sparkle:shortVersionString (2.6.0) and sparkle:version
+  # (build 30). The default :sparkle strategy would report "2.6.0,30"; the cask
+  # tracks the marketing version only, because that is what the DMG filename uses.
   livecheck do
     url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/appcast.xml"
-    strategy :sparkle
+    strategy :sparkle do |item|
+      item.short_version
+    end
   end
 
   # LSMinimumSystemVersion in the shipped bundle is 26.0 (MACOSX_DEPLOYMENT_TARGET).
