@@ -11,8 +11,8 @@ cask "walkaitalkie" do
 
   url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/WalkAITalkie-v#{version}.dmg"
   name "WalkAITalkie"
-  desc "Menu bar push-to-talk dictation with on-device speech recognition and LLM cleanup"
-  homepage "https://walkaitalkie.com"
+  desc "Menu bar push-to-talk dictation with on-device speech recognition"
+  homepage "https://walkaitalkie.com/"
 
   # Same Sparkle appcast the shipped app updates from (SUFeedURL in Info.plist).
   livecheck do
