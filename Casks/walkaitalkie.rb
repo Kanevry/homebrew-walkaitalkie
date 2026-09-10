@@ -31,16 +31,23 @@ cask "walkaitalkie" do
 
   uninstall quit: "at.buchhaltgenie.walkaitalkie"
 
-  # NOTE: downloaded speech/LLM models are deliberately NOT zapped. They live in
-  # ~/Documents/huggingface/models/ (swift-transformers HubApi path), are multi-GB,
-  # and are shared with any other MLX/WhisperKit tooling on the machine. Deleting
-  # user Documents from a `brew zap` would be hostile and would fail `brew audit`.
+  # Paths below were verified to exist on a real install (Direct/Sparkle build).
+  # The Sparkle update cache lives inside .../Caches/at.buchhaltgenie.walkaitalkie/
+  # org.sparkle-project.Sparkle and is covered by the Caches entry.
+  #
+  # Deliberately NOT zapped:
+  #  * ~/Documents/huggingface/models/ -- downloaded speech/LLM models. Multi-GB,
+  #    shared with any other MLX/WhisperKit tooling, and inside the user's Documents.
+  #    Removing those from a `brew zap` would be hostile.
+  #  * ~/Library/Containers/at.buchhaltgenie.walkaitalkie -- belongs to the sandboxed
+  #    App Store build, which Homebrew does not install and must not touch.
   zap trash: [
+    "~/Library/Application Scripts/at.buchhaltgenie.walkaitalkie",
     "~/Library/Application Support/WalkAITalkie",
     "~/Library/Caches/at.buchhaltgenie.walkaitalkie",
-    "~/Library/Caches/at.buchhaltgenie.walkaitalkie.ShipIt",
     "~/Library/HTTPStorages/at.buchhaltgenie.walkaitalkie",
+    "~/Library/HTTPStorages/at.buchhaltgenie.walkaitalkie.binarycookies",
+    "~/Library/Logs/WalkAITalkie",
     "~/Library/Preferences/at.buchhaltgenie.walkaitalkie.plist",
-    "~/Library/Saved Application State/at.buchhaltgenie.walkaitalkie.savedState",
   ]
 end
