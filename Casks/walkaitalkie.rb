@@ -22,7 +22,8 @@ cask "walkaitalkie" do
   end
 
   # LSMinimumSystemVersion in the shipped bundle is 26.0 (MACOSX_DEPLOYMENT_TARGET).
-  depends_on macos: ">= :tahoe"
+  # Homebrew 6 reads a bare symbol as ">= that release"; the string form is deprecated.
+  depends_on macos: :tahoe
 
   app "WalkAITalkie.app"
 
