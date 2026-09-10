@@ -9,8 +9,7 @@ cask "walkaitalkie" do
   version "2.6.0"
   sha256 "9e5abdfb54cf0e49f646bd369d5a95b9f7b464fc63a5696c7d17bd39f70ade74"
 
-  url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/WalkAITalkie-v#{version}.dmg",
-      verified: "oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/"
+  url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/WalkAITalkie-v#{version}.dmg"
   name "WalkAITalkie"
   desc "Menu bar push-to-talk dictation with on-device speech recognition and LLM cleanup"
   homepage "https://walkaitalkie.com"
