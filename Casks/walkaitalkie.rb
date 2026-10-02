@@ -6,8 +6,8 @@
 # AFTER a Sparkle release has been published. The URL is deliberately the VERSIONED
 # DMG, never .../WalkAITalkie-latest.dmg -- Homebrew needs a stable checksum per version.
 cask "walkaitalkie" do
-  version "2.11.1"
-  sha256 "5d043ca3093c026fdfcf92dbbd9a24c00bfea75964d7f6e0a51307570d3e1d0d"
+  version "2.11.2"
+  sha256 "f7fdf92d651c95e227dacd91a66415353307fe240e9db65d37515492ad172bc7"
 
   url "https://oj0jtcebfrfsieei.public.blob.vercel-storage.com/releases/WalkAITalkie-v#{version}.dmg"
   name "WalkAITalkie"
